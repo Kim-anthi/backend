@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+</head>
+<body>
+  <h1>Users</h1>
+  <form action="" method="post">
+    {% csrf_token %}
+  <form action="">
+    <label for="first_name">First name:</label>
+    <input type="text" id="first_name" name="first_name" required placeholder="Enter First Name">
+    <br><br>
+    <label for="last_name"><b>Last name:</b></label>
+    <input type="text" id="last_name" name="last_name" required placeholder="Enter Last Name">
+    <br><br>
+    <label for="age">Age</label>
+    <input type="text" id="age" name="age" required placeholder="Enter Your Age">
+    <label for="email"><b>Email Address:</b></label>
+    <input type="email" id="email" name="email" required placeholder="Enter Email Address">
+    <br><br>
+    <label for="phone_number"><b>Phone number:</b></label>
+    <input type="text" id="phone_number" name="phone_number" required placeholder="Enter phone number">
+        <br><br>
+    <label for="Gender"><b>Gender:</b> </label>
+        <select name="Gender" id="Gender" >
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+
+        </select>
+        <!-- <br><br><br>
+<input type="radio" id="Retired" name="age" value="Retired">
+<label for="Retired">Retired</label><br>
+<input type="radio" id="Working" name="age" value="Working">
+<label for="Working">Working</label><br>
+<input type="radio" id="Young" name="age" value="Young">
+<label for="Young">Young</label>
+        <br><br> -->
+        <label for="pic"><b>Upload Pic:</b></label>
+        <input type="file" id="pic" name="pic"><br><br>
+    <label for="date"><b>Date of birth:</b></label>
+    <input type="date" id="date" name="date" required placeholder="Enter date">
+    <br><br><br>
+    <label for="pass"><b>Password:</b></label>
+    <input type="password" id="pass" name="password" required placeholder="Enter Password">
+        <br><br>
+        <!-- <label for="pass"><b>Repeat Password:</b></label>
+    <input type="password" id="pass" name="pass" required placeholder="Confirm Password">
+    <br><br><br> -->
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p><br>
+    <button type="submit">Register</button>
+        <br><br>
+        <h1>List of users</h1>
+        <ul>
+          {% for user in Users %} 
+           
+           <li>{{ user.first_name}} {{ user.last_name}} </li>
+           <li>{{user.email}}</li>
+           <li>{{user.phone_number}}</li>
+              <li>{{user.age}} </li> <br>
+              <li> {{user.Gender}} </li>
+              <li>{{user.pic}}</li>
+              <li>{{user.date}}</li>
+              <li>{{user.password}}</li>
+          
+          {% endfor %}
+ 
+</body>
+</html>
